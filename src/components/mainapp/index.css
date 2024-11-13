@@ -1,0 +1,193 @@
+/* Write your CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+/* Overall background and layout */
+.todos-bg-container {
+  background-color: #f9fbfe;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.todos-heading {
+  text-align: center;
+  font-size: 46px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.create-task-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.create-task-heading-subpart {
+  font-weight: 500;
+}
+
+.todo-items-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.todo-items-heading-subpart {
+  font-weight: 500;
+}
+
+/* Input field for creating tasks */
+.todo-user-input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #e4e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-user-input:focus {
+  outline: none;
+  border-color: #4c63b6;
+}
+
+/* Button styles */
+.button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #4c63b6;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #3a4a8e;
+}
+
+/* Error message styling */
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Todo item styles */
+.todo-items-container {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.todo-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e4e7eb;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #fafbfc;
+  transition: all 0.2s ease;
+}
+
+.todo-item-container:hover {
+  background-color: #f0f5ff;
+}
+
+/* Checkbox and label styles */
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.checkbox-label {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px 20px;
+  width: 80%;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Strikethrough for completed tasks */
+.checked {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Delete button container */
+.delete-icon-container {
+  cursor: pointer;
+  font-size: 20px;
+  color: #e4e7eb;
+  transition: all 0.2s ease;
+}
+
+.delete-icon-container{
+  color: #e74c3c;
+}
+
+/* Clear all button */
+.clear-all-button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.clear-all-button:hover {
+  background-color: #c0392b;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .todos-heading {
+    font-size: 36px;
+  }
+
+  .create-task-heading,
+  .todo-items-heading {
+    font-size: 28px;
+  }
+
+  .todo-user-input,
+  .button,
+  .clear-all-button {
+    font-size: 16px;
+  }
+
+  .todo-item-container {
+    font-size: 14px;
+  }
+}
