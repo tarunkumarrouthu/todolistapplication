@@ -21,11 +21,11 @@ class MainApp extends React.Component {
   }
 
   addTodoItem = () => {
-    const {inputValue} = this.state // Destructure state here
+    const {inputValue} = this.state
 
     if (!inputValue.trim()) {
       this.setState({error: 'Enter valid text'})
-      return // Early return if there's an error
+      return
     }
 
     const newTodo = {
@@ -34,18 +34,17 @@ class MainApp extends React.Component {
       isChecked: false,
     }
 
-    // Use prevState to update todoList and avoid redeclaring todoList in the callback
     this.setState(
       prevState => {
-        const {todoList} = prevState // Destructure state here
+        const {todoList} = prevState
         return {
-          todoList: [...todoList, newTodo], // Directly use prevState.todoList
+          todoList: [...todoList, newTodo],
           inputValue: '',
           error: null,
         }
       },
       () => {
-        const {todoList} = this.state // Destructure here as well
+        const {todoList} = this.state
         localStorage.setItem('todoList', JSON.stringify(todoList))
       },
     )
@@ -54,14 +53,14 @@ class MainApp extends React.Component {
   toggleTodoItemStatus = id => {
     this.setState(
       prevState => {
-        const {todoList} = prevState // Destructure state here
+        const {todoList} = prevState
         const updatedList = todoList.map(todo =>
           todo.id === id ? {...todo, isChecked: !todo.isChecked} : todo,
         )
         return {todoList: updatedList}
       },
       () => {
-        const {todoList} = this.state // Destructure here as well
+        const {todoList} = this.state
         localStorage.setItem('todoList', JSON.stringify(todoList))
       },
     )
@@ -70,12 +69,12 @@ class MainApp extends React.Component {
   deleteTodoItem = id => {
     this.setState(
       prevState => {
-        const {todoList} = prevState // Destructure state here
+        const {todoList} = prevState
         const updatedList = todoList.filter(todo => todo.id !== id)
         return {todoList: updatedList}
       },
       () => {
-        const {todoList} = this.state // Destructure here as well
+        const {todoList} = this.state
         localStorage.setItem('todoList', JSON.stringify(todoList))
       },
     )
